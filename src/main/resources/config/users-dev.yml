@@ -1,0 +1,20 @@
+# users-dev.yml
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/master-users-service
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:Paymonk@123}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+security:
+  jwt:
+    secret: ${JWT_SECRET_KEY:development-secret-key-123456789}
+    expiration: 18000000  # 5 hours
+
+# Environment-specific logging level
+logging:
+  level:
+    com.galvatron.users: DEBUG  # Adjust logging level as needed
